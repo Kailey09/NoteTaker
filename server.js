@@ -1,4 +1,4 @@
-const express = require("express");
+const express = require('express');
 const fs = require("fs");
 const path = require("path");
 const util = require("util");
@@ -26,7 +26,7 @@ app.get("/api/notes", function(req, res) {
 // POST request
 app.post("/api/notes", function(req, res) {
     const note = req.body;
-    readFileAsync("./db/db/json", "utf8").then(function(data) {
+    readFileAsync("./db/db.json", "utf8").then(function(data) {
         const notes = [].concat(JSON.parse(data));
         note.id = notes.length + 1
         notes.push(notes);
