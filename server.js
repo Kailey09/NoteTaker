@@ -29,7 +29,7 @@ app.post("/api/notes", function(req, res) {
     readFileAsync("./db/db.json", "utf8").then(function(data) {
         const notes = [].concat(JSON.parse(data));
         note.id = notes.length + 1
-        notes.push(notes);
+        notes.push(note);
         return notes
     }).then(function(notes) {
         writeFileAsync("./db/db.json", JSON.stringify(notes))
